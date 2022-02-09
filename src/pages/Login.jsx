@@ -13,7 +13,7 @@ function Login(props) {
         axios.post('http://localhost:8000/maller/auth/signin',
         {
             email:email,
-            password:password,
+            password:password
         }
         )
         
@@ -49,7 +49,7 @@ function Login(props) {
 
                 </div>
                 <div placeholder='example@example.com' className='email1'>Email Address</div>
-                <input placeholder="example@example.com" className="email"  value={email} onChange={(e)=>setEmail(e.target.value)} type="email"/>
+                <input  className="email"  value={email} onChange={(e)=>setEmail(e.target.value)} type="email"/>
                 <div placeholder='enter password' className='pass1'>Password</div>
                 <input placeholder="Enter password" className="pass" value={password} onChange={(e)=>setPassword(e.target.value)} type="password"/>
                 

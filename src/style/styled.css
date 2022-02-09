@@ -6,12 +6,12 @@ html{
     font-size: 62.5%;
 }
 
-a{
+.topstores a{
     color: #000000;
     text-decoration: none;
 }
 
-a:hover{
+.topstores a:hover{
     color: #f08040;
 }
 
@@ -60,7 +60,7 @@ color: #39818D;
     margin: 10px;
 }
 
-.stores{
+.stores1{
     margin: 10px;
 }
 
@@ -229,6 +229,7 @@ footer{
     background-color: #558F96;
     border: 0px solid black;
     color: #ffffff;
+    cursor: pointer;
     height: 50px;
     width: 100px;
     border-radius: 5px;
@@ -240,14 +241,12 @@ footer{
 
 .signb{
     color: #000000;
+    cursor: pointer;
     font-size: 20px;
     margin-left: 205px;
     margin-top: -30px;
     text-decoration-style: none;
 }
-
-
-
 
 .pp{
     font-size: 22px;
@@ -255,50 +254,51 @@ footer{
     margin-top: 50px;
 }
 .card {
-    border-radius: 15px;
-    background-color: #F2F3F5;
-    padding-top: 20px;
-    max-width: 300px;
-    max-height: 200px;
+    width: 300px;
+    height: 200px;
+    margin-left: 20px;
     text-align: center;
     font-family: arial;
-    display: inline-block;
-    padding: 10px;
-    margin-left: 90px;
-    margin-bottom: 10px;  
-    display: 'flex'; 
-    justify-Content: 'space-between'; 
-    align-Items: 'center';  
+    background-color: #F2F3F5;
+    margin-bottom: 250px;
+    padding: 15px;
+    border-radius: 15px;
   }
   
   .cardimg{
-    max-width: 300px;
-    max-height: 200px;
+    width: 150px;
+    height: 150px;
   }
+
 .cards{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 100;
     margin-left: 100px;
-    display: 'flex'; 
-    justify-Content: 'space-between'; 
-    align-Items: 'center';
+    margin-top: 80px;
 }
 
   .price {
-    color: grey;
+    color: rgb(95, 62, 62);
     font-size: 22px;
   }
+
+  .titlep{
+      margin-top: 50px;
+  }
   
-  .card button {
+  .cbutton {
     border: none;
     outline: 0;
     padding: 12px;
     color: #558F96;
     background-color: rgb(255, 255, 255);
     border: 1px solid rgb(230, 228, 228);
-    text-align: center;
     cursor: pointer;
     width: 70%;
     font-size: 18px;
-    margin-left: 1px;
+    margin-left: 10px;
+    margin-top: -100px;
   }
   
   .card button:hover {
@@ -344,7 +344,7 @@ footer{
     border-radius: 15px;
     background-color: #F2F3F5;
     padding-top: 20px;
-    width: 800px;
+    width: 1100px;
     height: 150px;
     text-align: center;
     font-family: arial;
@@ -364,8 +364,8 @@ footer{
 }
 
 .cart_price{
-    margin-left: 670px;
-    margin-top: -25px;
+    margin-left: 870px;
+    margin-top: -35px;
     display: flex;
     font-size: 25px;
     position: absolute;
@@ -373,7 +373,7 @@ footer{
 
 .cart_btn{
     margin-left: 230px;
-    margin-top: -28px;
+    margin-top: -35px;
     padding: 7px;
     font-size: 15px;
     position: absolute;
@@ -428,3 +428,195 @@ footer{
   .dropdown:hover .dropdown-content {display: block;}
   
   .dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+
+  .cart-details{
+      display: flex;
+      font-size: 18px;
+      margin-left: 50px;
+  }
+
+  .cart-details p{
+      margin-left: 50px;
+      margin-top: 100px;
+      border: 1px solid gray;
+      border-radius: 5px;
+      padding: 10px;
+  }
+
+  .checkout{
+    background-color: #558F96;
+    border: 0px solid black;
+    color: #ffffff;
+    height: 50px;
+    width: 100px;
+    border-radius: 5px;
+    font-size: 20px;
+    margin-left: 100px;
+    margin-top: 20px;
+  }
+
+  .checkout a{
+      text-decoration: none;
+      color: #ddd;
+  }
+
+
+  .payment{
+    border-radius: 5px;
+    background-color: #F2F3F5;
+    padding-top: 20px;
+    width: 350px;
+    height: 50px;
+    text-align: center;
+    font-family: arial;
+    display: inline-block;
+    padding: 10px;
+    margin-left: 490px;
+    margin-bottom: -50px;
+    margin-top: 80px; 
+    font-size: 20px;
+  }
+
+  .pmethod{
+    border-radius: 5px;
+    background-color: #F2F3F5;
+    padding-top: 20px;
+    width: 350px;
+    height: 150px;
+    text-align: center;
+    font-family: arial;
+    display: inline-block;
+    padding: 10px;
+    margin-left: 490px;
+    margin-top: 40px; 
+    font-size: 20px;
+  }
+
+.pmethod p{
+    color: #9c9898;
+    margin-right: 100px;
+}
+
+  #pm{
+    border-radius: 5px;
+    padding: 10px;
+}
+
+#credit_card{
+    margin-left: -140px;
+}
+
+#paypal{
+    margin-left: -181px;
+}
+
+
+.card_info{
+    border-radius: 5px;
+    background-color: #F2F3F5;
+    padding-top: 20px;
+    width: 350px;
+    height: 300px;
+    text-align: center;
+    font-family: arial;
+    display: inline-block;
+    padding: 10px;
+    margin-left: 490px;
+    margin-top: 30px; 
+    font-size: 20px;   
+}
+
+.card_info p{
+    color: #9c9898;
+    margin-right: 130px;
+}
+
+.holder_name{
+    border: 1px solid #D7D7D7;
+    border-radius: 5px;
+    font-size: 15px;
+    padding: 8px;
+    margin-top: 15px;
+    margin-left: -35px;
+}
+
+.card_number{
+    border: 1px solid #D7D7D7;
+    border-radius: 5px;
+    font-size: 15px;
+    padding: 8px;
+    margin-top: 15px;
+    margin-left: -35px;
+}
+
+.ex_date{
+    border: 1px solid #D7D7D7;
+    border-radius: 5px;
+    font-size: 15px;
+    padding: 8px;
+    margin-top: 15px;
+    margin-left: -35px;
+}
+
+
+.date{
+    margin-left: -30px;
+    margin-bottom: -10px;
+}
+
+.cn{
+    margin-left: 12px;
+    margin-bottom: -10px;
+}
+
+.hn{
+    margin-bottom: -10px;
+    margin-left: 10px;
+}
+
+
+.purchase{
+    background-color: #558F96;
+    border: 0px solid black;
+    color: #ffffff;
+    height: 50px;
+    width: 150px;
+    border-radius: 5px;
+    font-size: 20px;
+    margin-left: 580px;
+    margin-top: 30px;
+    margin-bottom: 100px;
+    cursor: pointer;
+}
+
+
+.store{
+    max-width: 300px;
+    max-height: 200px;
+    margin-left: 20px;
+    text-align: center;
+    font-family: arial;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.23) 0%, rgba(196, 196, 196, 0) 100%);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 15px;
+    margin-bottom: 50px;
+    padding: 15px;
+    margin-left: 35px;
+    cursor: pointer;
+  }
+
+
+.stores{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 100px;
+    margin-left: 100px;
+    margin-top: -80px;
+}
+
+
+.storeimg{
+    height: 150px;
+    width: 150px;
+}

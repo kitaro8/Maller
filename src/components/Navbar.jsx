@@ -6,6 +6,8 @@ import account from './account.png'
 import {Link, useNavigate } from 'react-router-dom'
 
 
+
+
 const Navbar = () => {
     const [isLogged, setIsLogged] = React.useState(true)
     useEffect(()=>{
@@ -37,7 +39,7 @@ const Navbar = () => {
         <div className='navitems'>
             <a href="/" className='home'>Home</a>
             <a href="/products" className='products'>Products</a>
-            <a href="#" className='stores'>Stores</a>
+            <a href="/stores" className='stores1'>Stores</a>
         </div>
         <div>
         <input type="text" placeholder="Search" className="search"/>
@@ -80,7 +82,7 @@ const Navbar = () => {
         <div className='navitems'>
             <a href="/" className='home'>Home</a>
             <a href="/products" className='products'>Products</a>
-            <a href="#" className='stores'>Stores</a>
+            <a href="/stores" className='stores1'>Stores</a>
         </div>
         <div>
         <input type="text" placeholder="Search" className="search"/>

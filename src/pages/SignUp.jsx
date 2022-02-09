@@ -6,16 +6,24 @@ export default class SignUp extends Component {
         super()
         this.state = 
         {
-                email:'',
-                first_name: '',
-                last_name: '',
-                password1: '',
-                password2: ''
+            first_name: "",
+            last_name: "",
+            email: "",
+            password1: "",
+            password2: ""
 
         }
     }
         
     
+    onChangeFname=e=>{
+        this.setState({ first_name: e.target.value })
+    }
+
+    onChangeLname=e=>{
+        this.setState({ last_name: e.target.value })
+    }
+
 
     onChangeEmail=e=>{
         this.setState({ email: e.target.value })
@@ -29,34 +37,28 @@ export default class SignUp extends Component {
         this.setState({ password2: e.target.value })
     }
 
-    onChangeFname=e=>{
-        this.setState({ first_name: e.target.value })
-    }
 
-    onChangeLname=e=>{
-        this.setState({ last_name: e.target.value })
-    }
 
     onSubmit=e=>{
         e.preventDefault()
 
         const user = {
+            first_name: this.state.first_name,
+            last_name: this.state.last_name,
             email: this.state.email,
             password1: this.state.password1,
-            password2: this.state.password2,
-            first_name: this.state.first_name,
-            last_name: this.state.last_name
+            password2: this.state.password2
         };
 
-        axios.post('http://localhost:8000/maller/auth/signup', {user})
+        axios.post('http://localhost:8000/maller/auth/signup', user)
             .then((res) => {
                 console.log(res.data)
             }).catch((error) => {
                 console.log(error)
             });
 
-        this.setState({password1: '', password2:'', email:'',
-         first_name:'', last_name:''})
+        this.setState({first_name:'', last_name:'', email:'', password1: '', password2:''
+        })
     }
 
 

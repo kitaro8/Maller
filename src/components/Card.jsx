@@ -1,21 +1,20 @@
 import React from 'react'
+import Products from '../pages/Products';
+import Navbar from './Navbar';
 import img from './shoes.png'
 
 function Card(props) {
     return (
-
-    <div>
-        <h2 className='pp'>Popular Products</h2>
-
-        <div className='cards'>
-            <div class="card">
-                <img className='cardimg' src={props.object.image} alt="shoes"/>
-                <h1>{props.object.title}</h1>
-                <p class="price">${props.object.price}</p>
-                <p><button className='card button' onClick={()=>props.addTocart(props.object)} >Add to Cart</button></p>
-            </div>
+        <div>
+         
+                <div class="card">
+                    <img className='cardimg' src={props.object.image} alt="shoes"/>
+                    <p className='titlep'>{props.object.title}</p>
+                    <p class="price">${props.object.price}</p>
+                    <p><button className='cbutton' onClick={()=>props.addToCart(props.object)} >Add to Cart</button></p>
+                </div>
+            
         </div>
-    </div>
     )
 }
 

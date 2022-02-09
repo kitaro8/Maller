@@ -16,7 +16,7 @@ export class Index extends Component {
                 <>
                     <Navbar></Navbar>
                     <Home></Home>
-                    <Products></Products>
+                    <Cards></Cards>
                     <Category></Category>
                 </>
             </div>

@@ -7,6 +7,8 @@ import Products from './pages/Products';
 import Cart from './pages/Cart';
 import {useEffect,useState} from 'react'
 import SignUp from './pages/SignUp';
+import Stores from './pages/Stores';
+import CheckoutPage from './pages/CheckoutPage';
 
 const App =() =>{
 
@@ -38,6 +40,8 @@ const App =() =>{
                 <Route path="/signup" element={<SignUp/>}/>
                 <Route path="/add-products" element={<Add/>}/>
                 <Route path="/products" element={<Products/>}/>
+                <Route path="/stores" element={<Stores/>}/>
+                <Route path="/checkout" element={<CheckoutPage/>}/>
                 <Route path="/cart" element={<Cart setCartItems={setCartItems} addToStorage={addToStorage} cartItems={cartItems} onRemove={removeFromStorage}/>}/>
                 
 
