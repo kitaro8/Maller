@@ -1,31 +1,36 @@
 import Card from "../components/Card";
-import Inputs from "../components/Inputs";
 import React, { Component } from "react";
-import Buttons from "../components/Buttons";
+import axios from 'axios';
+import Cards from "../components/Cards";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+
 
 class Add extends Component {
     constructor() {
         super();
         this.state = {
         
-        name: "",
+        title: "",
         price: "",
-        search_value: "",
-        products: [],
-        products_filter: [],
+        description: "qwe",
+        image: "https://i.pravatar.cc",
+        category: "asda"
         };
     
     
         this.nameChange = this.nameChange.bind(this);
         this.priceChange = this.priceChange.bind(this);
         this.addProduct = this.addProduct.bind(this);
-        this.onSearch = this.onSearch.bind(this);
+        this.descChange = this.descChange.bind(this);
+        this.imageChange = this.imageChange.bind(this);
+        this.categoryChange = this.categoryChange.bind(this);
     }
     
     
     nameChange(e) {
         this.setState({
-        name: e.target.value,
+        title: e.target.value,
         });
     }
     priceChange(e) {
@@ -33,88 +38,69 @@ class Add extends Component {
         price: e.target.value,
         });
     }
+
+    descChange(e){
+        this.setState({
+            description: e.target.value,
+            });
+    }
+
+    imageChange(e){
+        this.setState({
+            image: e.target.value
+        })
+    }
+
+    categoryChange(e){
+        this.setState({
+            category: e.target.value
+        })
+    }
     
     addProduct(e) {
         
-        let tempName = this.state.name;
-        let tempPrice = this.state.price;
-        let tempProducts = tempName + tempPrice;
+        const products = {
+            title: this.state.title,
+            price: this.state.price,
+            description: this.state.description,
+            image: this.state.image,
+            category: this.state.category
+        };
         
-        if (tempProducts) {
-        let product = [];
-        product.name = tempName;
-        product.price = tempPrice;
-        this.state.products.push(product);
-        this.setState({
-            product: this.state.products,
-            products_filter: this.state.products,
+
+
+        axios.post('https://fakestoreapi.com/products', products)
+        .then((res) => {
+            console.log(res.data)
+        }).catch((error) => {
+            console.log(error)
         });
+
+    this.setState({title:'', price:'',
+     description:'qwe', image:'https://i.pravatar.cc', category:'asda'})
         }
-    }
-    
-    onSearch(e) {
-        let newSearch = e.target.value;
-        let name = this.state.products;
-        if (newSearch===false) {
-        this.setState({
-            search_value: newSearch,
-            products_filter: this.state.products,
-        });
-        return;
-        }
-        let filtered = name.filter((item) => {
-        return item.name.includes(newSearch);
-        });
-        this.setState({
-        search_value: newSearch,
-        products_filter: filtered,
-        });
-    }
+
+  
+
     render() {
         return (
-    
-    
-        <div>
-            
-            <div>
-                <Inputs
-                name="search"
-                ph="Search Products"
-                value={this.state.search_value}
-                onChange={this.onSearch}
-                />
-                </div>
-                <div>
-                {/* <div> */}
-                <Inputs
-                    name="name"
-                    ph="Name"
-                    value={this.state.name}
-                    onChange={this.nameChange}
-                />
-                <Inputs
-                    name="price"
-                    ph="Price"
-                    value={this.state.price}
-                    onChange={this.priceChange}
-                />
-    
 
-                {/* </div> */}
-                {/* </div> */}
-                <div>
-                    <Buttons onClick={this.addProduct} title="Add New"/>
-                </div>
+        <div>
+            <Navbar></Navbar>
+            <div className="add_pro">
+                    <div className="titlepro">Title:</div>
+                    <input className="add_pro_input"/>
+                    <div className="pricepro">Price:</div>
+                    <input className="add_pro_input"/>
+                    <div className="descpro">Description:</div>
+                    <input className="add_pro_input"/>
+                    <div className="imgpro">Image:</div>
+                    <input className="fileimage" type='file'/>
             </div>
-    
-    
-            <div>
-                
-            {this.state.products_filter.map((item) => {
-                return <Card product={item} />;
-            })}
-            </div>
+            <button className="add_prob">Add Product</button>
+            <Footer></Footer>
         </div>
+
         );
     }
     }

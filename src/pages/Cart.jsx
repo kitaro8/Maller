@@ -1,6 +1,7 @@
 // import '../App.css'
 import React, { useEffect, useState } from 'react';
 import {Navigate} from 'react-router-dom'
+import Footer from '../components/Footer';
 import Navbar from '../components/Navbar'
 
 
@@ -80,6 +81,7 @@ function Cart({onRemove, cartItems}) {
                 <p>Total: {total}</p>
             </div>
             <button className='checkout'><a href='/Checkout'>Checkout</a></button>
+            <Footer></Footer>
         </div>
     )
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import store1 from './StoresIMG/store1.jpg'
 import store2 from './StoresIMG/store2.png'
@@ -57,6 +58,7 @@ function Stores() {
                 </div>
                 
       </div>
+      <Footer></Footer>
       </div>
   </div>;
 }
