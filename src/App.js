@@ -12,7 +12,7 @@ import CheckoutPage from './pages/CheckoutPage';
 
 const App =() =>{
 
-    let [cartItems, setCartItems] = useState(JSON.parse(localStorage.getItem('pro')));
+    let [cartItems, setCartItems] = useState(JSON.parse(localStorage.getItem('items')));
     const addToStorage = ((addPro)=>{
       let objects ={
                name : addPro.name,
@@ -20,15 +20,15 @@ const App =() =>{
                price : addPro.price,
           }
           cartItems.push(objects)
-      localStorage.setItem("pro", JSON.stringify(cartItems))
-      setCartItems(JSON.parse(localStorage.getItem('pro')))
+      localStorage.setItem("items", JSON.stringify(cartItems))
+      setCartItems(JSON.parse(localStorage.getItem('items')))
     })
   
   
     const removeFromStorage = ((index)=>{
       cartItems.splice(index, 1)
-      localStorage.setItem('pro', JSON.stringify(cartItems))
-      setCartItems(JSON.parse(localStorage.getItem('pro')))
+      localStorage.setItem('items', JSON.stringify(cartItems))
+      setCartItems(JSON.parse(localStorage.getItem('items')))
   })
     return (
         

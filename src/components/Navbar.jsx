@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import   '../style/styled.css'
-import { Search } from "@material-ui/icons"
 import logo from './logo.png'
 import account from './account.png'
 import {Link, useNavigate } from 'react-router-dom'

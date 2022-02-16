@@ -7,16 +7,25 @@ import axios from 'axios'
 
 function Cards(props) {
 
-    const addToCart = (object)=>{
+    const addToCart = (product)=> {
+        let items = JSON.parse(localStorage.getItem('items')) ?? []
+        let updated_product 
+        let qty
 
-        var oldItems = JSON.parse(localStorage.getItem('pro'))
-        if (oldItems==null){
-            localStorage.setItem("pro", JSON.stringify([object]))
+        if(items.length==0)
+        {
+            updated_product=product
+
+        } else {
+            updated_product = items.find((item)=> item.id==product.id) ?? product
         }
-        else{
-            oldItems.push(object)
-            localStorage.setItem('pro', JSON.stringify(oldItems));
-        }
+        qty = updated_product.qty ??  0
+        updated_product.qty = qty+1
+        items = items.filter((item)=>{
+            return item.id!=product.id
+        })
+        items.push(updated_product)
+        localStorage.setItem("items",JSON.stringify(items))
         
     }
     
@@ -42,8 +51,6 @@ function Cards(props) {
     )
 }
 
-
-    
 
 
 export default Cards;
